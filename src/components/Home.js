@@ -23,7 +23,18 @@ return(
  <h2>Home</h2>
  <Container>
   <Row>
-  <Col><Button variant="secondary">BUTTON</Button></Col>
+  <Col>
+  <h2>Want to learn How to Light, Shoot & Colorgrade In-Studio Portraits like Amazing Klef?? This is for you!!</h2>
+  <p>A Comprehensive Video Course designed by Amazing Klef to help improve your studio lighting skills and empower you to create clean & creative images.
+
+This course will take you from "Amateur" to "Beast" in the studio using simple tricks and setups.</p>
+<Button variant="dark">Get Started!</Button>
+  </Col>
+  <Col>
+  <div id="home-image">
+  <img src="https://cdn.mos.cms.futurecdn.net/yL3oYd7H2FHDDXRXwjmbMf.jpg"/>
+  </div>
+  </Col>
   </Row>
 </Container>
 </div>
