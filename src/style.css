@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Joan&family=Nanum+Gothic&family=Raleway:ital,wght@0,100;0,200;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Joan&family=Nanum+Gothic&family=Rajdhani:wght@300&family=Raleway:ital,wght@0,100;0,200;1,100&display=swap');
 @media screen and (min-width:480px){
   h1,
   p {
@@ -20,16 +20,17 @@
     justify-content: center;
     justify-self: center;
     align-self: center;
-    flex:1;
+    flex:3;
   }
   .tnk{
     color: black;
-    font-size: 17px;
+    font-size: 15px;
     display: inline-block;
     margin:10px 10px 10px 10px;
     text-decoration-style: none;
     padding: 2px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Rajdhani', sans-serif;
+
   }
   .tnk:hover{
     margin:10px 10px 9px 10px;
@@ -128,12 +129,17 @@
     color: black;
     font-size: 17px;
     display: block;
-    margin:10px 10px 10px 10px;
+    margin:10px 10px 9px 10px;
     text-decoration-style: none;
     padding: 2px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Rajdhani', sans-serif;
  text-decoration: none;
+ border-bottom: 2px solid white;
+ width: fit-content;
   }
+.tnv:hover{
+  border-bottom: 1px solid black;
+}
   #cart{
     justify-items: center;
     justify-self: center;
@@ -190,5 +196,11 @@
   color: aliceblue;
   padding: 8px;
   margin-left: 1px;
+}
+#example-collapse-text{
+  text-decoration: none;
+}
+Link{
+  text-decoration: none;
 }
 }
