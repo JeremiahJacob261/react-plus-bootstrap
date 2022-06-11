@@ -4,8 +4,8 @@ import {Form ,Button} from 'react-bootstrap'
 function Footer(){
 return(
   <div class="footer">
+    <h3>Join the #Slammy Family</h3>
 <div class="newsletter">
-
  <div><Form>
   <Form.Group className="mb-3" controlId="subscribeInput">
     <Form.Control type="email" placeholder="Enter email" />
