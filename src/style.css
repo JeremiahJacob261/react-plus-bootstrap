@@ -30,7 +30,7 @@
     text-decoration-style: none;
     padding: 2px;
     font-family: 'Rajdhani', sans-serif;
-
+    font-weight: 600;
   }
   .tnk:hover{
     margin:10px 10px 9px 10px;
@@ -88,14 +88,26 @@
     height: fit-content;
   }
  span{
-   visibility: hidden;
+  justify-items: center;
+  justify-self: center;
+  align-self: center; 
+  flex: 1;
+  margin: 3px;
+  background-color: white;
+ }
+ #drawer{
+  visibility: hidden;
+  flex: 1;
  }
   form{
     display: inline-flex;
-    
-  }
-
-
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+     }
+#subscribe:hover{
+background-color: rgb(36, 36, 36);
+}
 }
 
 @media screen and (max-width:480px){
@@ -114,7 +126,7 @@
   }
   .mainHeader.pages{
    visibility: hidden;
-   width: min-content;
+   width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -136,6 +148,7 @@
  text-decoration: none;
  border-bottom: 2px solid white;
  width: fit-content;
+ font-weight: 600;
   }
 .tnv:hover{
   border-bottom: 1px solid black;
@@ -203,4 +216,15 @@
 Link{
   text-decoration: none;
 }
+ #drawer{
+  justify-items: center;
+    justify-self: center;
+    align-self: center; 
+    flex: 1;
+    margin: 3px;
+    background-color: white;
+    padding: 5px;
+    cursor: pointer;
+    visibility: visible;
+ }
 }

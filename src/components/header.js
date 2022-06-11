@@ -21,12 +21,14 @@ function Header(){
    <Link to="Contact" ><div class="tnk">Contact</div></Link> 
   </div>
   <FontAwesomeIcon icon= {faSearch} id="cart"/>
-  <span class="material-symbols-outlined"  onClick={() => setOpen(!open)}
+  <span class="material-symbols-outlined" id="drawer"  onClick={() => setOpen(!open)}
         aria-controls="example-collapse-text"
         aria-expanded={open}>
 menu
 </span>
-
+<span class="material-symbols-outlined">
+shopping_bag
+</span>
     </div>
     <Collapse in={open}>
         <div id="example-collapse-text">
