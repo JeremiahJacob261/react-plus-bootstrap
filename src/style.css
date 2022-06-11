@@ -129,6 +129,9 @@ min-width: 200px;
 }
 .home-image-side-col{
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #subscribeInput{
   padding: 7px;
