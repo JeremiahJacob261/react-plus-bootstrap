@@ -134,6 +134,13 @@ min-width: 200px;
   padding: 7px;
   margin-left: 2px;
 }
+.Products-div{
+  display: flex;
+justify-content: center;
+}
+.filter-box{
+  display: inline-flex;
+}
 }
 /*for large screens below*/
 @media screen and (max-width:480px){
@@ -285,5 +292,12 @@ flex: 1;
 }
 #subscribe{
   margin-left: 5px;
+}
+.Products-div{
+  display: flex;
+justify-content: center;
+}
+.filter-box{
+
 }
 }
