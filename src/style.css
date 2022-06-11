@@ -76,7 +76,13 @@
   margin: auto;
   align-items: center;
   }
- 
+ #subscribe{
+   border: 1px whitesmoke;
+   background-color: black;
+   color: aliceblue;
+   padding: 8px;
+   margin-left: 2px;
+ }
   .home{
     height: fit-content;
   }
@@ -178,4 +184,11 @@
  Form{
    display: inline-flex;
  } 
+ #subscribe{
+  border: 1px whitesmoke;
+  background-color: black;
+  color: aliceblue;
+  padding: 8px;
+  margin-left: 1px;
+}
 }
