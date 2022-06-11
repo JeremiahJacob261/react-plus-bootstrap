@@ -244,15 +244,17 @@ Link{
     visibility: visible;
  }
 #home-img{
-  
-   height: 100px;
+  justify-self: center;
+   height: 100%;
    border-radius: 10px;
-   object-fit: contain;
+   object-fit: cover;
    flex: 1;
+   width: 100%;
  }
  img{
   max-width: 100%;
   max-height: 100%;
+  object-fit: cover;
 }
 .home-start{
   display: inline-flex;
@@ -267,7 +269,8 @@ flex: 1;
   height: 0%;
 }
 .home-image-side-col{
-  visibility: hidden;
+ justify-content: center;
+ align-items: center;
 }
 .home-start-text{
   flex: 1;
