@@ -22,8 +22,8 @@ return(
 <div class="home">
  <h2>Home</h2>
  <Container>
-  <Row>
-  <Col>
+  <Row class="home-start">
+  <Col class="home-start-text">
   <h2>Want to learn How to Light, Shoot & Colorgrade In-Studio Portraits like Amazing Klef?? This is for you!!</h2>
   <p>A Comprehensive Video Course designed by Amazing Klef to help improve your studio lighting skills and empower you to create clean & creative images.
 
