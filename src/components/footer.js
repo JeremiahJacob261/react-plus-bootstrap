@@ -1,6 +1,6 @@
 import React from 'react';
 import "../style.css";
-import {Form} from 'react-bootstrap'
+import {Form ,Button} from 'react-bootstrap'
 function Footer(){
 return(
   <div class="footer">
@@ -11,7 +11,7 @@ return(
     <Form.Control type="email" placeholder="Enter email" />
     </Form.Group>
     </Form>
-    <button id="subscribe">Subscribe</button>
+    <Button id="subscribe" variant="dark" type="sm">Subscribe</Button>
     </div>
 </div>
 <div class="corporates">Home</div>
