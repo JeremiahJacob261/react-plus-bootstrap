@@ -26,7 +26,7 @@ return(
   <img id="top" src="https://cdn.mos.cms.futurecdn.net/yL3oYd7H2FHDDXRXwjmbMf.jpg"/>
   </div>
   <Row class="home-start">
-  <Col class="home-start-text">
+  <Col class="home-start-text" sm={8}>
   <h2>Want to learn How to Light, Shoot & Colorgrade In-Studio Portraits like Amazing Klef?? This is for you!!</h2>
   <p>A Comprehensive Video Course designed by Amazing Klef to help improve your studio lighting skills and empower you to create clean & creative images.
 

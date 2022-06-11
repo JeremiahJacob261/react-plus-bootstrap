@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Joan&family=Nanum+Gothic&family=Rajdhani:wght@300&family=Raleway:ital,wght@0,100;0,200;1,100&display=swap');
+/*for small screens below*/
 @media screen and (min-width:480px){
   h1,
   p {
@@ -109,27 +110,25 @@ img{
  max-width: 100%;
  max-height: 100%;
 }
-.home-start{
- display: flex;
- padding: 8px;
-}
+
 .home-start-text{
 flex: 1;
+min-width: 200px;
 }
 #top{
   visibility: hidden;
   width: 0px;
   height: 0px;
 }
-#side{
-  
+.home-image-side-col{
+  flex: 1;
 }
 #subscribeInput{
   padding: 7px;
   margin-left: 2px;
 }
 }
-
+/*for large screens below*/
 @media screen and (max-width:480px){
   h1,
   p {
@@ -245,7 +244,7 @@ Link{
     visibility: visible;
  }
 #home-img{
-   width: auto;
+  
    height: 100px;
    border-radius: 10px;
    object-fit: contain;
@@ -256,7 +255,7 @@ Link{
   max-height: 100%;
 }
 .home-start{
-  display: flex;
+  display: inline-flex;
   padding: 8px;
 }
 .home-start-text{
@@ -264,12 +263,16 @@ flex: 1;
 }
 #side{
   visibility: hidden;
+  width: 0%;
+  height: 0%;
 }
 .home-image-side-col{
   visibility: hidden;
 }
 .home-start-text{
-  width: 100%;
   flex: 1;
+}
+#subscribe{
+  margin-left: 5px;
 }
 }
