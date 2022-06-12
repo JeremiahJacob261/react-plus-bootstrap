@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Dropdown} from 'react-bootstrap'
+import {Dropdown , Container, Row ,Col} from 'react-bootstrap'
 
 class Products extends React.Component {
   constructor() {
@@ -41,6 +41,12 @@ Sort By
   </Dropdown.Menu>
 </Dropdown>
 </div>
+<Container>
+  <Row>
+    <Col>gffjvsi</Col>
+    <Col>kjfbdts</Col>
+  </Row>
+</Container>
     </div>
   );
 }
