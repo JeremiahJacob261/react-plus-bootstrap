@@ -1,27 +1,29 @@
-import React from 'react';
+import React ,{useState,useEffect} from 'react';
 import {render} from 'react-dom';
 import {Dropdown , Container, Row ,Col,Button} from 'react-bootstrap';
 import {db} from './firebase-config'
 import { collection, addDoc , doc, setDoc , getDoc} from "firebase/firestore";
  
 
-class Products extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'React'
-    };
-  }
-render(){
-  const getData=async()=>{
-    const querySnapshot = await getDocs(collection(db, "slammy"));
-    querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      alert(doc.id, " => ", doc.data());
-    });
-  }
+function Products(){
+  const[pro ,setPro]=useState();
+  useEffect(() => {
+    const getData=async()=>{
+      const querySnapshot = await getDocs(collection(db, "slammy"));
+     setPro(querySnapshot.docs.map((docs) => ({...doc.data(), id: doc.id})))
+    }
+    getData();
+}
+  );
   return(
     <div>
+      {pro.map((user) => {
+        return(
+          <div>
+            
+          </div>
+        );
+      })}
     <div class="Products-div"> 
 <h1>Products</h1>
 </div>
@@ -52,14 +54,15 @@ Sort By
 </Dropdown>
 </div>
 <Container>
-  <Button onClick={getData}>getdata</Button>
+  <Button>getdata</Button>
   <Row class="product-catalog">
     <Col class="product-catalog-col">gffjvsi</Col>
-    <Col>kjfbdts</Col>
+    <Col>hola</Col>
   </Row>
 </Container>
+
     </div>
   );
-}
+
 }
 export default Products;

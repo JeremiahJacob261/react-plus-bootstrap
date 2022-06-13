@@ -9,6 +9,7 @@ import '../style.css';
          const[product,setProduct]=useState();
          const[price,setPrice]=useState();
           const Lick= async()=>{
+            /*slammy is a collection */
             await addDoc(collection(db, "slammy"), {
               product: product,
               price: price,
