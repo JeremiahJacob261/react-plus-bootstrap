@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import {Dropdown , Container, Row ,Col,Button} from 'react-bootstrap';
 import {db} from './firebase-config'
-
+import { collection, addDoc , doc, setDoc } from "firebase/firestore";
  
 
 class Products extends React.Component {
@@ -13,18 +13,12 @@ class Products extends React.Component {
     };
   }
 render(){
-
-  const Lick= async()=>{
-    try {
-      const docRef = await addDoc(collection(db, "users"), {
-        first: "Ada",
-        last: "Lovelace",
-        born: 1815
-      });
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
+const Lick= async()=>{
+    await setDoc(doc(db, "slammy","productCatalog1"), {
+      name: "Los Angeles",
+      state: "CA",
+      country: "USA"
+    });
   }
   return(
     <div>
