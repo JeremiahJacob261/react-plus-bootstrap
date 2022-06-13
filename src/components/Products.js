@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Dropdown , Container, Row ,Col} from 'react-bootstrap'
+import {Dropdown , Container, Row ,Col} from 'react-bootstrap';
+
 
 class Products extends React.Component {
   constructor() {
@@ -10,6 +11,7 @@ class Products extends React.Component {
     };
   }
 render(){
+  
   return(
     <div>
     <div class="Products-div"> 
