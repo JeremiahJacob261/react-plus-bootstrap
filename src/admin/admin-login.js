@@ -5,6 +5,14 @@ import {} from 'react-bootstrap';
 import { collection, addDoc , doc, setDoc } from "firebase/firestore";
       class AdminLogin extends React.Component{
         render(){
+          const Lick= async()=>{
+            await addDoc(collection(db, "slammy"), {
+              name: "Lagos",
+              state: "Ikeja",
+              country: "Nigeria"
+            });
+
+          }
           return
           (
             <div>

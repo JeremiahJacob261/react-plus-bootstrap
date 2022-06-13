@@ -13,13 +13,6 @@ class Products extends React.Component {
     };
   }
 render(){
-const Lick= async()=>{
-    await addDoc(collection(db, "slammy"), {
-      name: "Lagos",
-      state: "Ikeja",
-      country: "Nigeria"
-    });
-  }
   return(
     <div>
     <div class="Products-div"> 
@@ -57,7 +50,6 @@ Sort By
     <Col>kjfbdts</Col>
   </Row>
 </Container>
-<Button variant="secondary" onClick={Lick}>Try</Button>
     </div>
   );
 }

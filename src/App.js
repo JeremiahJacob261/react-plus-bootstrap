@@ -8,6 +8,8 @@ import Portfolio from './components/MyPortfolio.js'
 import Products from './components/Products.js'
 import Header from './components/header.js';
 import Footer from './components/footer.js';
+import AdminHome from './admin/Admin';
+
 export default function App() {
   return (
         <div>
@@ -19,6 +21,7 @@ export default function App() {
            />}></Route>
           <Route exact path="/Contact" element={<Contact />}></Route>
           <Route exact path="/Products" element={<Products />}></Route>
+          <Route exact path="/admin" element={<AdminHome />}></Route>
         </Routes>
         <Footer/>
         </div>
