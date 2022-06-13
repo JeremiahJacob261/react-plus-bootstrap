@@ -243,7 +243,7 @@ justify-content: center;
     visibility: visible;
   }
  Form{
-   display: inline-flex;
+   display: inline-block;
  } 
 #example-collapse-text{
   text-decoration: none;
@@ -309,4 +309,7 @@ justify-content: center;
 }
 .product-catalog-col{
   flex: 1;
+}
+.product-info{
+  display: block;
 }

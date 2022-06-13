@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import {Dropdown , Container, Row ,Col,Button} from 'react-bootstrap';
 import {db} from './firebase-config'
-import { collection, addDoc , doc, setDoc } from "firebase/firestore";
+import { collection, addDoc , doc, setDoc , getDoc} from "firebase/firestore";
  
 
 class Products extends React.Component {
@@ -13,6 +13,13 @@ class Products extends React.Component {
     };
   }
 render(){
+  const getData=async()=>{
+    const querySnapshot = await getDocs(collection(db, "slammy"));
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      alert(doc.id, " => ", doc.data());
+    });
+  }
   return(
     <div>
     <div class="Products-div"> 
@@ -45,6 +52,7 @@ Sort By
 </Dropdown>
 </div>
 <Container>
+  <Button onClick={getData}>getdata</Button>
   <Row class="product-catalog">
     <Col class="product-catalog-col">gffjvsi</Col>
     <Col>kjfbdts</Col>

@@ -1,34 +1,43 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {db}from '../components/firebase-config'
 import {render} from 'react-dom';
-import {Form,Button} from 'react-bootstrap';
+import {Form,Button,File} from 'react-bootstrap';
 import { collection, addDoc , doc, setDoc } from "firebase/firestore";
-      class AdminHome extends React.Component{
-        constructor() {
-          super();
-          this.state = {
-            name: 'React'
-          };
-        }
-        render(){
+import '../style.css';
+      function AdminHome (){
+       
+         const[product,setProduct]=useState();
+         const[price,setPrice]=useState();
           const Lick= async()=>{
             await addDoc(collection(db, "slammy"), {
-              name: "Lagos",
-              state: "Ikeja",
-              country: "Nigeria"
+              product: product,
+              price: price,
             });
 
           }
+         
           return(
             <div>
             <h2>Add Products</h2>
-            <Form>
-    <Form.Group className="mb-3" controlId="subscribeInput">
-      <Form.Control type="email" placeholder="Enter email" />
+            <Form class="product-info">
+              Select picture
+    <input type="file" placeholder="select picture"/>
+    <Form.Group className="mb-3" controlId="name">
+      <Form.Control type="text" value={product} onChange={(product) => {
+            setProduct(product.target.value);
+          }} placeholder="product name"/>
       </Form.Group>
+      <Form.Group className="mb-3" controlId="price">
+      <Form.Control type="number" value={price} onChange={(price) => {
+            setPrice(price.target.value);
+          }} placeholder="price in dollars" />
+      </Form.Group>
+      <Button variant='secondary' onClick={Lick}>Add Product</Button>
       </Form>
               </div>
             );
         }
-      }
+       
+      
       export default AdminHome;
+      
