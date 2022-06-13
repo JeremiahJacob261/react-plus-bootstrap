@@ -1,7 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Dropdown , Container, Row ,Col} from 'react-bootstrap';
+import {Dropdown , Container, Row ,Col,Button} from 'react-bootstrap';
+import {db} from './firebase-config'
 
+ 
 
 class Products extends React.Component {
   constructor() {
@@ -11,7 +13,19 @@ class Products extends React.Component {
     };
   }
 render(){
-  
+
+  const Lick= async()=>{
+    try {
+      const docRef = await addDoc(collection(db, "users"), {
+        first: "Ada",
+        last: "Lovelace",
+        born: 1815
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  }
   return(
     <div>
     <div class="Products-div"> 
@@ -49,6 +63,7 @@ Sort By
     <Col>kjfbdts</Col>
   </Row>
 </Container>
+<Button variant="secondary" onClick={Lick}>Try</Button>
     </div>
   );
 }
