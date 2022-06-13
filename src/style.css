@@ -302,3 +302,11 @@ flex: 1;
 justify-content: center;
 }
 }
+.product-catalog{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-catalog-col{
+  flex: 1;
+}

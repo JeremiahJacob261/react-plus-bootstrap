@@ -42,8 +42,8 @@ Sort By
 </Dropdown>
 </div>
 <Container>
-  <Row>
-    <Col>gffjvsi</Col>
+  <Row class="product-catalog">
+    <Col class="product-catalog-col">gffjvsi</Col>
     <Col>kjfbdts</Col>
   </Row>
 </Container>
