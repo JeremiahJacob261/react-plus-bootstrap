@@ -14,10 +14,10 @@ class Products extends React.Component {
   }
 render(){
 const Lick= async()=>{
-    await setDoc(doc(db, "slammy","productCatalog1"), {
-      name: "Los Angeles",
-      state: "CA",
-      country: "USA"
+    await addDoc(collection(db, "slammy"), {
+      name: "Lagos",
+      state: "Ikeja",
+      country: "Nigeria"
     });
   }
   return(
