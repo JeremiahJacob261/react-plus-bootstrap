@@ -11,6 +11,16 @@ import { collection, addDoc , doc, setDoc } from "firebase/firestore";
           };
         }
         render(){
+          function getDta(){
+            const query = collection(db, "slammy");
+            getDocs(query).then((snapshot) => {
+              let product = []
+              snapshot.docs.forEach((doc) => {
+                product.push({...doc.data() , id: doc.id})
+              })
+              
+            });
+           }
           const Lick= async()=>{
             await addDoc(collection(db, "slammy"), {
               name: "Lagos",

@@ -2,17 +2,26 @@ import React ,{useState,useEffect} from 'react';
 import {render} from 'react-dom';
 import {Dropdown , Container, Row ,Col,Button} from 'react-bootstrap';
 import {db} from './firebase-config'
-import { collection, addDoc , doc, setDoc , getDoc} from "firebase/firestore";
+import { collection, addDoc , doc, setDoc , getDocs} from "firebase/firestore";
  
 
 function Products(){
- const getDta =async()=>{
-  const querySnapshot = await getDocs(collection(db, "slammy"));
-  querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
-  });
- }
+  const [product ,setProduct] = useState([]);
+  useEffect(() => {
+    const pro = async() =>{
+          const query = collection(db, "slammy");
+            getDocs(query).then((snapshot) => {
+              let product = []
+              snapshot.docs.forEach((doc) => {
+                product.push({...doc.data() , id: doc.id})
+              })
+              
+            });
+   console.log(product.price);
+    }
+    pro();
+  })
+
   return(
     <div>
     <div class="Products-div"> 
@@ -45,7 +54,7 @@ Sort By
 </Dropdown>
 </div>
 <Container>
-  <Button onClick={getDta}>getdata</Button>
+  <Button>getdata</Button>
   <Row class="product-catalog">
     <Col class="product-catalog-col">gffjvsi</Col>
     <Col>hola</Col>
