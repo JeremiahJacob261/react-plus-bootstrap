@@ -6,7 +6,7 @@ import { collection, addDoc , doc, setDoc , getDoc} from "firebase/firestore";
  
 
 function Products(){
-  const[pro ,setPro]=useState();
+  const[pro ,setPro]=useState([]);
   useEffect(() => {
     const getData=async()=>{
       const querySnapshot = await getDocs(collection(db, "slammy"));
@@ -17,13 +17,15 @@ function Products(){
   );
   return(
     <div>
-      {pro.map((user) => {
-        return(
+    
+      <div>{pro.map((user) => { 
+         return (
           <div>
-            
+            <h1>Name: {user.product}</h1>
+            <h1>Age: {user.price}</h1>
           </div>
         );
-      })}
+      })}</div>
     <div class="Products-div"> 
 <h1>Products</h1>
 </div>
