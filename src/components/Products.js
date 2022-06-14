@@ -6,26 +6,15 @@ import { collection, addDoc , doc, setDoc , getDoc} from "firebase/firestore";
  
 
 function Products(){
-  const[pro ,setPro]=useState([]);
-  useEffect(() => {
-    const getData=async()=>{
-      const querySnapshot = await getDocs(collection(db, "slammy"));
-     setPro(querySnapshot.docs.map((docs) => ({...doc.data(), id: doc.id})))
-    }
-    getData();
-}
-  );
+ const getDta =async()=>{
+  const querySnapshot = await getDocs(collection(db, "slammy"));
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+  });
+ }
   return(
     <div>
-    
-      <div>{pro.map((user) => { 
-         return (
-          <div>
-            <h1>Name: {user.product}</h1>
-            <h1>Age: {user.price}</h1>
-          </div>
-        );
-      })}</div>
     <div class="Products-div"> 
 <h1>Products</h1>
 </div>
@@ -56,7 +45,7 @@ Sort By
 </Dropdown>
 </div>
 <Container>
-  <Button>getdata</Button>
+  <Button onClick={getDta}>getdata</Button>
   <Row class="product-catalog">
     <Col class="product-catalog-col">gffjvsi</Col>
     <Col>hola</Col>
