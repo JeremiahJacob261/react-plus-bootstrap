@@ -7,20 +7,15 @@ import { collection, addDoc , doc, setDoc , getDocs} from "firebase/firestore";
 
 function Products(){
   const [product ,setProduct] = useState([]);
+  const usersCollectionRef = collection(db, "slammy")
   useEffect(() => {
-    const pro = async() =>{
-          const query = collection(db, "slammy");
-            getDocs(query).then((snapshot) => {
-              let product = []
-              snapshot.docs.forEach((doc) => {
-                product.push({...doc.data() , id: doc.id})
-              })
-              
-            });
-   console.log(product.price);
-    }
-    pro();
-  })
+    const getUsers = async () => {
+      const data = await getDocs(usersCollectionRef);
+      setProduct(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+
+   getUsers();
+  }, []);
 
   return(
     <div>
@@ -60,7 +55,16 @@ Sort By
     <Col>hola</Col>
   </Row>
 </Container>
-
+<div>
+  {product.map((pro)=>{
+    return(
+      <div>
+        <h2>{pro.price}</h2>
+      </div>
+    );
+  }
+ )}
+</div>
     </div>
   );
 
