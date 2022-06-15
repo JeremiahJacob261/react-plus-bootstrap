@@ -14,7 +14,7 @@ function Products(){
       setProduct(data.docs.map((pro) => ({ ...pro.data(), id: pro.id })));
     };
 
-   getUsers();
+  
   }, []);
 
   return(
@@ -59,6 +59,7 @@ Sort By
   {product.map((pro)=>{
     return(
       <div>
+        <h2>{pro.product}</h2>
         <h2>{pro.price}</h2>
       </div>
     );

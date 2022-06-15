@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {db}from '../components/firebase-config'
+import {db,storage}from '../components/firebase-config'
 import {render} from 'react-dom';
 import {Form,Button,File} from 'react-bootstrap';
 import { collection, addDoc , doc, setDoc } from "firebase/firestore";
@@ -8,21 +8,25 @@ import '../style.css';
        
          const[product,setProduct]=useState();
          const[price,setPrice]=useState();
+         const [imageUpload ,setImageUpload]=useState(null);
           const Lick= async()=>{
             /*slammy is a collection */
+            if(imageUpload == null){return;}
             await addDoc(collection(db, "slammy"), {
               product: product,
               price: price,
             });
 
           }
-         
           return(
             <div>
             <h2>Add Products</h2>
             <Form class="product-info">
               Select picture
-    <input type="file" placeholder="select picture"/>
+    <input type="file" onChange={
+  (imageUpload) => {
+    setImageUpload(imageUpload.target.files[0]);
+    }}/>
     <Form.Group className="mb-3" controlId="name">
       <Form.Control type="text" value={product} onChange={(product) => {
             setProduct(product.target.value);
