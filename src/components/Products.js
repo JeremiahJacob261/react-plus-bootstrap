@@ -2,7 +2,7 @@ import React ,{useState,useEffect} from 'react';
 import {render} from 'react-dom';
 import {Dropdown , Container, Row ,Col,Button} from 'react-bootstrap';
 import {db} from './firebase-config'
-import { collection, addDoc , doc, setDoc , getDocs} from "firebase/firestore";
+import { collection,doc, getDocs} from "firebase/firestore";
  
 
 function Products(){
@@ -13,7 +13,7 @@ function Products(){
       const data = await getDocs(usersCollectionRef);
       setProduct(data.docs.map((pro) => ({ ...pro.data(), id: pro.id })));
     };
-
+getUsers();
   
   }, []);
 
