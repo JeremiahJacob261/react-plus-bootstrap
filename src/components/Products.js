@@ -11,7 +11,7 @@ function Products(){
   useEffect(() => {
     const getUsers = async () => {
       const data = await getDocs(usersCollectionRef);
-      setProduct(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setProduct(data.docs.map((pro) => ({ ...pro.data(), id: pro.id })));
     };
 
    getUsers();
