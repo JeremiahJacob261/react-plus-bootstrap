@@ -4,6 +4,7 @@ import {render} from 'react-dom';
 import {Form,Button,File} from 'react-bootstrap';
 import { collection, addDoc , doc, setDoc } from "firebase/firestore";
 import '../style.css';
+import { ref } from "firebase/storage";
       function AdminHome (){
        
          const[product,setProduct]=useState();
@@ -11,6 +12,13 @@ import '../style.css';
          const [imageUpload ,setImageUpload]=useState(null);
           const Lick= async()=>{
             /*slammy is a collection */
+            const imageRef = ref(storage, `slammy/${imageUpload.name + v4()}`);
+            uploadBytes(imageRef, imageUpload).then((snapshot) => {
+              getDownloadURL(snapshot.ref).then((url) => {
+                setImageUrls((prev) => [...prev, url]);
+              });
+            });
+          
             if(imageUpload == null){return;}
             await addDoc(collection(db, "slammy"), {
               product: product,
