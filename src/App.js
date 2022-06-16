@@ -1,8 +1,8 @@
 import React from "react";
 import "./style.css";
-import Home from './components/Home.js'
-import {BrowserRouter as Router , Route, Routes} from 'react-router-dom'
-import Academy from './components/Academy.js'
+import Home from './components/Home.js';
+import { Route, Routes} from 'react-router-dom';
+import Academy from './components/Academy.js';
 import Contact from './components/Contact.js'
 import Portfolio from './components/MyPortfolio.js'
 import Products from './components/Products.js'
