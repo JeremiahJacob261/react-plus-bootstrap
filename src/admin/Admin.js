@@ -4,6 +4,7 @@ import {render} from 'react-dom';
 import {Form,Button,File} from 'react-bootstrap';
 import { collection, addDoc , doc, setDoc } from "firebase/firestore";
 import '../style.css';
+import {ref,uploadBytes} from 'firebase/storage';
 
       function AdminHome (){
        
@@ -11,6 +12,10 @@ import '../style.css';
         const[price,setPrice]=useState();
         const [imageUpload ,setImageUpload]=useState(null);
          const Lick= async()=>{
+          const imageRef = ref(storage,'slammy/${imageUpload.name}+{product}');
+          uploadBytes(imageRef,'windowslayout.png').then(() => {
+            alert('done');
+          })
            /*slammy is a collection */
            await addDoc(collection(db, "slammy"), {
              product: product,
@@ -22,6 +27,9 @@ import '../style.css';
            <div>
            <h2>Add Products</h2>
            <Form class="product-info">
+             <input type="file" onChange={(imageUpload) => {
+                setImageUpload(imageUpload.target.files[0]);
+             }}/>
    <Form.Group className="mb-3" controlId="name">
      <Form.Control type="text" value={product} onChange={(product) => {
            setProduct(product.target.value);
