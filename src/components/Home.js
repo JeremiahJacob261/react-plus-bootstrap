@@ -7,7 +7,6 @@ import {faEyeSlash ,faSquare} from "@fortawesome/free-regular-svg-icons";
 import {faSearch} from "@fortawesome/free-brands-svg-icons";
 import {faCartShopping} from "@fortawesome/free-solid-svg-icons";
 import  Button from 'react-bootstrap/Button';
-import  Alert from 'react-bootstrap/Alert';
 import  {Container,Row,Col} from 'react-bootstrap';
 
 class Home extends React.Component {
